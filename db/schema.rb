@@ -12,13 +12,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_530_053_358) do
+ActiveRecord::Schema[7.0].define(version: 20_230_530_092_244) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'messages', force: :cascade do |t|
     t.text 'content'
-    t.integer 'project_alliance_id'
+    t.integer 'room_id'
     t.integer 'user_id'
     t.boolean 'deletable', default: true
     t.datetime 'created_at', null: false
@@ -38,6 +38,14 @@ ActiveRecord::Schema[7.0].define(version: 20_230_530_053_358) do
     t.integer 'start_date'
     t.integer 'timeline'
     t.integer 'status', default: 0
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'user_id'
+  end
+
+  create_table 'rooms', force: :cascade do |t|
+    t.string 'broadcast_channel'
+    t.integer 'project_alliance_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
