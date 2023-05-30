@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = project.find_by(id: params[:id])
+    @project = Project.find_by(id: params[:id])
   end
 
   # Logedin user, which will be fetched via current_user,for now picking a random one

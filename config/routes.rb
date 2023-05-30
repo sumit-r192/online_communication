@@ -2,4 +2,10 @@
 
 Rails.application.routes.draw do
   root 'home#index'
+
+  resources :projects do
+    resources :teams, only: %i[index new create]
+  end
+
+  resources :teams, only: %i[show edit update destroy]
 end
