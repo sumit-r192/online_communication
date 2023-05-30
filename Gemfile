@@ -72,4 +72,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'rails-erd', group: :development
 gem 'rubocop', require: false

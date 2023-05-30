@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :teams
   has_many :messages
+  # has_many :projects # For project manager
 
   def project_manager?
     role.eql?('project_manager')
